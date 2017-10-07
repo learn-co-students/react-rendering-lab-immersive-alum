@@ -37,22 +37,3 @@ describe('Circle', () => {
     expect(spy.calledOnce).to.be.true;
   });
 });
-
-
-describe('Animation', () => {
-  it('triggers the loading bar when a rerender is about to take place ', () => {
-    const spy = sinon.spy(Animation.prototype, 'showLoadingBar');
-    const wrapper = shallow(<Animation />);
-    wrapper.instance().componentWillUpdate();
-    expect(spy.calledOnce).to.be.true;
-  });
-});
-
-describe('Pikachu', () => {
-  it('calls the function to resize the pikachu whenever the component re-renders', () => {
-    const spy = sinon.spy(Pikachu.prototype, 'resizePikachu');
-    const wrapper = shallow(<Pikachu />);
-    wrapper.instance().componentDidUpdate();
-    expect(spy.calledOnce).to.be.true;
-  });
-});
